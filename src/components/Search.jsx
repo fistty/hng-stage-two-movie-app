@@ -2,30 +2,32 @@ import React from "react";
 
 function Search() {
 	return (
-		<form>
+		<form className="form-search">
 			<input
+				className="search-input"
 				type="text"
 				name="search"
 				id="search"
 				placeholder="What do you want to watch?"
 			/>
-			<svg
-				className="search-svg"
-				fill="none"
-				height="24"
-				viewBox="0 0 24 24"
-				width="24"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				<path
-					className="path"
-					d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-					stroke={"white"}
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					strokeWidth="2"
-				/>
-			</svg>
+			<button className="search-button">
+				<svg
+					className="search-svg"
+					xmlns="http://www.w3.org/2000/svg"
+					width="16"
+					height="16"
+					viewBox="0 0 16 16"
+					fill="none"
+				>
+					<path
+						d="M14 14L10 10M11.3333 6.66667C11.3333 9.244 9.244 11.3333 6.66667 11.3333C4.08934 11.3333 2 9.244 2 6.66667C2 4.08934 4.08934 2 6.66667 2C9.244 2 11.3333 4.08934 11.3333 6.66667Z"
+						stroke="white"
+						strokeWidth="2"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+					/>
+				</svg>
+			</button>
 		</form>
 	);
 }

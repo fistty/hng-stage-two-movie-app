@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useMovieContext } from "../context/useMovieContext";
-import Heading from "../components/Heading";
+import Header from "../components/Header";
 import "./Home.css";
 
 function Home() {
@@ -14,7 +14,7 @@ function Home() {
 
 	return (
 		<>
-			<Heading />
+			<Header />
 		</>
 	);
 }

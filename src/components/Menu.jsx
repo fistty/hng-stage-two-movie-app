@@ -1,11 +1,10 @@
-import "./Menu.css";
 export const Menu = () => {
 	return (
 		<div className="menu">
-			<div className="text-wrapper-5">Sign in</div>
-			<div className="menu-alt-wrapper">
+			<div className="menu-text">Sign in</div>
+			<div className="menu-button">
 				<svg
-					className="menu-alt-4-1"
+					className="menu-svg"
 					fill="none"
 					height="24"
 					viewBox="0 0 24 24"
