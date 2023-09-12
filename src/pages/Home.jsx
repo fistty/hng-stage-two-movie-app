@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useMovieContext } from "../context/useMovieContext";
 import Heading from "../components/Heading";
+import "./Home.css";
 
 function Home() {
 	const { moviesList } = useMovieContext();
@@ -14,7 +15,6 @@ function Home() {
 	return (
 		<>
 			<Heading />
-			{/* <pre> {JSON.stringify(moviesList, null, 2)} </pre> */}
 		</>
 	);
 }
