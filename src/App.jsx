@@ -24,12 +24,11 @@ function App() {
 		)
 	);
 
-	const { first, setFirst, moviesList, setMoviesList, reload, setReload } =
+	const { moviesList, setMoviesList, reload, setReload } =
 		useContext(MovieContext);
-	console.log(first);
 
 	useEffect(() => {
-		getMovies();
+		// getMovies(setMoviesList);
 	}, []);
 
 	return (
