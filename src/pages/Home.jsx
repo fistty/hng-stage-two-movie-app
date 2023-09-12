@@ -3,7 +3,7 @@ import { useMovieContext } from "../context/useMovieContext";
 import Heading from "../components/Heading";
 
 function Home() {
-	const { first, moviesList } = useMovieContext();
+	const { moviesList } = useMovieContext();
 
 	// useEffect(() => {
 	// 	setInterval(() => {
