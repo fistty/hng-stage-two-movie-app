@@ -15,6 +15,7 @@ function Home() {
 	return (
 		<>
 			<Header />
+			<main>{/* <TopMovies /> */}</main>
 		</>
 	);
 }
