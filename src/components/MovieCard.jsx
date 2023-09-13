@@ -1,11 +1,11 @@
 import React from "react";
 import { getGenre } from "../helpers/getGenre";
-import "./MovieCard.css";
 import { getDate } from "../helpers/getDate";
+import "./MovieCard.css";
 
 export const MovieCard = ({ movie }) => {
 	const baseImageUrl = "https://image.tmdb.org/t/p/w342";
-	let width = "w92, w154, w185, w342, w500,w780";
+	let width = "w92, w154, w185, w342, w500,w780, w1280";
 
 	return (
 		<div className="movie-card" data-testid="movie-card">

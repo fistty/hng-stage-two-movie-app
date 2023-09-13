@@ -1,0 +1,13 @@
+.movie-details {
+  position: relative;
+}
+
+.empty {}
+
+.movie-details-section {
+  width: 100%;
+  display: grid;
+  gap: 2.31rem;
+  grid-template-columns: 16% 1fr;
+  padding-right: 3.19rem;
+}

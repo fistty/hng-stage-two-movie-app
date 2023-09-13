@@ -1,17 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Logo } from "./Logo";
 import { useLocation } from "react-router-dom";
+import { SideLinks } from "./SideLinks";
 import "./SideBar.css";
 
 export const SideBar = () => {
-	const loc = useLocation();
+	const location = useLocation();
+
 	useEffect(() => {
-		console.log(loc);
-		console.log(2);
+		console.log(location);
 	});
 	return (
 		<div className="side-bar">
 			<Logo />
+			<SideLinks />
 		</div>
 	);
 };

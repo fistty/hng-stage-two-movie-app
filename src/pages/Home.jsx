@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import { useMovieContext } from "../context/useMovieContext";
 import Header from "../components/Header";
-import "./Home.css";
-import "./Home-main.css";
 import { MovieList } from "../components/MovieList";
+import "./Home.css";
 
 function Home() {
 	const { moviesList } = useMovieContext();

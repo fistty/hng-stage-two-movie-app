@@ -25,9 +25,8 @@ header {
 
 .logo {
   align-items: center;
-  display: inline-flex;
+  display: flex;
   gap: 24px;
-  position: relative;
 }
 
 .logo .tv {
@@ -44,7 +43,6 @@ header {
   font-weight: 700;
   letter-spacing: 0;
   line-height: 24px;
-  position: relative;
   white-space: nowrap;
   width: fit-content;
 }

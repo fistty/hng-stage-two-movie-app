@@ -11,11 +11,11 @@ export const DescriptionBox = () => {
 			</div>
 			<div className="description-rating">
 				<div className="imdb-div">
-					<img className="rating-svg" src={imdbSvg} alt="" />{" "}
+					<img className="rating-svg" src={imdbSvg} alt="" />
 					<div className="rating-score"> 86.0/100</div>
 				</div>
 				<div className="rotten-div">
-					<img className="rating-svg" src={rottenTomatoSvg} alt="" />{" "}
+					<img className="rating-svg" src={rottenTomatoSvg} alt="" />
 					<div className="rating-score"> 97%</div>
 				</div>
 			</div>
