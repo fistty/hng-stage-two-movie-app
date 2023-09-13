@@ -1,0 +1,9 @@
+.side-bar {
+  color: black;
+  border: 2px solid black;
+  height: 100vh;
+}
+
+.side-bar .text-wrapper {
+  color: black
+}

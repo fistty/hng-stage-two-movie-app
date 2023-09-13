@@ -1,7 +1,11 @@
 import React from "react";
+import { SideBar } from "../components/SideBar";
 
-function MovieDetails() {
-	return <div>MovieDetails</div>;
-}
-
-export default MovieDetails;
+export const MovieDetail = () => {
+	return (
+		<div className="movie-details">
+			{" "}
+			<SideBar />{" "}
+		</div>
+	);
+};
