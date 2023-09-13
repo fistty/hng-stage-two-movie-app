@@ -13,6 +13,8 @@ import MovieContextProvider from "./context/MovieContextProvider";
 import { getMovies } from "./helpers/api";
 import { useMovieContext } from "./context/useMovieContext";
 import { MovieContext } from "./context/MovieContext";
+import { MovieList } from "./components/MovieList";
+import { data } from "./data";
 
 function App() {
 	const router = createBrowserRouter(
@@ -28,7 +30,9 @@ function App() {
 		useContext(MovieContext);
 
 	useEffect(() => {
+		// Not synchronous
 		// getMovies(setMoviesList);
+		setMoviesList(data);
 	}, []);
 
 	return (

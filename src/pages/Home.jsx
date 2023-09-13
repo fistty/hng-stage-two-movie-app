@@ -2,20 +2,21 @@ import React, { useEffect } from "react";
 import { useMovieContext } from "../context/useMovieContext";
 import Header from "../components/Header";
 import "./Home.css";
+import "./Home-main.css";
+import { MovieList } from "../components/MovieList";
 
 function Home() {
 	const { moviesList } = useMovieContext();
-
-	// useEffect(() => {
-	// 	setInterval(() => {
-	// 		console.log(moviesList);
-	// 	}, 2000);
-	// }, []);
-
+	useEffect(() => {
+		console.log(moviesList);
+	}, []);
 	return (
 		<>
 			<Header />
-			<main>{/* <TopMovies /> */}</main>
+			<main className="main">
+				<h1 className="h1">Top Movies</h1>
+				<MovieList />
+			</main>
 		</>
 	);
 }

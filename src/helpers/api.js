@@ -13,6 +13,8 @@ export const getMovies = async (setMoviesList) => {
 		options
 	);
 	const data = await response.json();
-	console.log(data.results);
-	setMoviesList(data.results);
+	let slicedData = data.results;
+	slicedData = slicedData.slice(0, 10);
+	console.log(slicedData);
+	setMoviesList(slicedData);
 };

@@ -1,0 +1,16 @@
+.main {
+  max-width: 77.5rem;
+  border: 2px solid red;
+  margin: 0 auto;
+  margin-top: 4.38rem;
+  color: black
+}
+
+.h1 {
+  color: #000;
+  font-family: var(--DM-sans);
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
