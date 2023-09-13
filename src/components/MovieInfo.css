@@ -68,10 +68,21 @@
 }
 
 .movie-description {
+  display: flex;
+  gap: 1.62rem;
+  margin-inline: 1rem;
   margin-top: 1.94rem;
-  max-width: 48.375rem;
-  margin-left: 1rem;
+  justify-content: space-between;
+}
 
+.first-div {
+  max-width: 48.375rem;
+  width: 100%;
+}
+
+.second-div {
+  max-width: 22.5rem;
+  width: 100%;
 }
 
 .movie-text p {
@@ -91,4 +102,85 @@
   font-weight: 500;
   line-height: normal;
   margin-bottom: 1.56rem;
+}
+
+.movie-rating {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+
+.movie-rating img {
+  display: block;
+  max-width: 100%;
+  padding-bottom: 0.4rem;
+}
+
+.movie-rating-average {
+  color: #898989;
+  font-family: var(--Poppins);
+  font-size: 1.5625rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-left: 0.56rem;
+
+
+}
+
+.movie-rating-count {
+  color: #666;
+  font-family: var(--Poppins);
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-left: 0.5rem;
+}
+
+.movie-showtimes button {
+  width: 100%;
+  height: 3.4375rem;
+  border-radius: 0.625rem;
+  background: #BE123C;
+
+  color: #FFF;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+  font-family: Poppins;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+}
+
+.movie-more {
+  margin-top: 0.75rem;
+}
+
+.movie-more button {
+  border-radius: 0.625rem;
+  border: 1px solid #BE123C;
+  background: rgba(190, 18, 60, 0.10);
+  width: 100%;
+  height: 3.4375rem;
+
+  color: #333;
+  font-family: Poppins;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+
+}
+
+.second-div-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  justify-content: center;
 }
