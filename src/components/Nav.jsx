@@ -5,7 +5,7 @@ import { Menu } from "./Menu";
 
 export const Nav = () => {
 	return (
-		<nav>
+		<nav className="nav">
 			<Logo />
 			<Search />
 			<Menu />

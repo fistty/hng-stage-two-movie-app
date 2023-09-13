@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import RootLayout from "./layout/RootLayout";
 import Home from "./pages/Home";
-import MovieDetails from "./pages/MovieDetails";
+import { MovieDetail } from "./pages/MovieDetails";
 import "./App.css";
 import { useContext, useEffect } from "react";
 import MovieContextProvider from "./context/MovieContextProvider";
@@ -21,7 +21,7 @@ function App() {
 		createRoutesFromElements(
 			<Route path="/" element={<RootLayout />}>
 				<Route index element={<Home />}></Route>
-				<Route element={<MovieDetails />}></Route>
+				<Route path="movie/:id" element={<MovieDetail />}></Route>
 			</Route>
 		)
 	);

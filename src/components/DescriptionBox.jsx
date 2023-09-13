@@ -2,7 +2,6 @@ import React from "react";
 import imdbSvg from "../../assets/imdb.svg";
 import rottenTomatoSvg from "../../assets/tomato.svg";
 import playSvg from "../../assets/play.svg";
-import "./DescriptionBox.css";
 
 export const DescriptionBox = () => {
 	return (
