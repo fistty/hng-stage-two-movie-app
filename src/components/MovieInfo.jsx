@@ -9,27 +9,28 @@ import "./MovieInfo.css";
 
 export const MovieInfo = () => {
 	const { movieDetailArr } = useMovieContext();
+
 	useEffect(() => {
 		console.log(movieDetailArr);
 	}, []);
 
 	return (
 		<div className="movie-info">
-			<MovieBackdrop />
+			<MovieBackdrop poster={movieDetailArr?.backdrop_path} />
 			<div className="movie-description">
 				<div className="first-div">
 					<div className="movie-title">
-						<p>{`${movieDetailArr.title} • `}</p>
-						<p>{`${new Date(movieDetailArr.release_date).toUTCString()}`} </p>
-						<p> {`${movieDetailArr.runtime} minutes`} </p>
-					</div>
-					<div className="movie-text">
-						<p>
-							After thirty years, Maverick is still pushing the envelope as a top naval
-							aviator, but must confront ghosts of his past when he leads TOP GUN's
-							elite graduates on a mission that demands the ultimate sacrifice from
-							those chosen to fly it.
+						<p data-testid="movie-title">{`${movieDetailArr.title} • `}</p>
+						<p data-testid="movie-release-date">
+							{`${new Date(movieDetailArr.release_date)
+								.toUTCString()
+								.slice(0, 17)} • `}
 						</p>
+						<p data-testid="movie-runtime">{`${movieDetailArr.runtime}m`}</p>
+					</div>
+					<div className="movie-info-genre">{/* <p>WEWEWE</p> */}</div>
+					<div className="movie-text">
+						<p>{movieDetailArr.overview}</p>
 					</div>
 					<div className="movie-top">
 						<Link to="/">View Top rated movies</Link>
@@ -38,7 +39,9 @@ export const MovieInfo = () => {
 				<div className="second-div">
 					<div className="movie-rating">
 						<img src={starSvg} alt="rating image" />
-						<p className="movie-rating-average">8.5</p>
+						<p className="movie-rating-average">
+							{movieDetailArr?.vote_average.toFixed(1)}
+						</p>
 						<p className="movie-rating-count">| 350k</p>
 					</div>
 					<div className="movie-showtimes ">

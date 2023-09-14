@@ -1,6 +1,7 @@
 import React from "react";
 import { getGenre } from "../helpers/getGenre";
 import { getDate } from "../helpers/getDate";
+import { Link } from "react-router-dom";
 import "./MovieCard.css";
 
 export const MovieCard = ({ movie }) => {
@@ -8,7 +9,11 @@ export const MovieCard = ({ movie }) => {
 	let width = "w92, w154, w185, w342, w500,w780, w1280";
 
 	return (
-		<div className="movie-card" data-testid="movie-card">
+		<Link
+			to={`/movies/${movie.id}`}
+			className="movie-card"
+			data-testid="movie-card"
+		>
 			<div className="movie-poster">
 				<img
 					src={`${baseImageUrl}/${movie.poster_path}`}
@@ -27,6 +32,6 @@ export const MovieCard = ({ movie }) => {
 				<div className="imdb">97</div> <div className="tomato">90</div>
 			</div> */}
 			<div className="movie-genre">{<p>{getGenre(movie.genre_ids)}</p>}</div>
-		</div>
+		</Link>
 	);
 };

@@ -52,10 +52,28 @@
 	transition: all 200ms ease;
 }
 
+.side-links-a.active {
+	background: rgba(190, 18, 60, 0.1);
+	border-right: 6px solid #be123c;
+	color: #be123c;
+}
+
+.side-links-a.active > img {
+	transform: scale(1.2);
+}
+
 .side-links-a:hover {
 	background: rgba(190, 18, 60, 0.1);
 	border-right: 6px solid #be123c;
 	color: #be123c;
+}
+
+.side-links-a > img {
+	transition: all 200ms ease;
+}
+
+.side-links-a:hover > img {
+	transform: scale(1.2);
 }
 
 .side-links-a:visited {

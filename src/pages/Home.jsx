@@ -13,7 +13,7 @@ function Home() {
 		<>
 			<Header />
 			<main className="main">
-				<h1 className="h1">Top Movie</h1>
+				<h1 className="h1">Top Movies</h1>
 				<MovieList />
 			</main>
 		</>

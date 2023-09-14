@@ -19,7 +19,7 @@ export const SideLinks = () => {
 						</Link>
 					</li>
 					<li className="side-links-li">
-						<Link to="#fd" className="side-links-a">
+						<Link to="#fd" className="side-links-a active">
 							<img className="side-links-svg" src={moviesSvg} alt="movie-link" />
 							Movies
 						</Link>
