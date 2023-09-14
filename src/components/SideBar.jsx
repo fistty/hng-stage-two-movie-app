@@ -7,9 +7,6 @@ import "./SideBar.css";
 export const SideBar = () => {
 	const location = useLocation();
 
-	useEffect(() => {
-		console.log(location);
-	});
 	return (
 		<div className="side-bar">
 			<Logo />
