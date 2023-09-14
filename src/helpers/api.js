@@ -18,3 +18,14 @@ export const getMovies = async (setMoviesList) => {
 	console.log(slicedData);
 	setMoviesList(slicedData);
 };
+
+export const getMovieDetails = async (id, setMovieDetails) => {
+	const response = await fetch(
+		`https://api.themoviedb.org/3/movie/${id}?language=en-US`,
+		options
+	);
+	const data = await response.json();
+
+	// console.log(data);
+	setMovieDetails(data);
+};

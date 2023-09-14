@@ -15,19 +15,23 @@ import { useMovieContext } from "./context/useMovieContext";
 import { MovieContext } from "./context/MovieContext";
 import { MovieList } from "./components/MovieList";
 import { data } from "./data";
+import { movieDetailsLoader } from "./loaders/movieDetailsLoader";
 
 function App() {
 	const router = createBrowserRouter(
 		createRoutesFromElements(
 			<Route path="/" element={<RootLayout />}>
 				<Route index element={<Home />}></Route>
-				<Route path="movie/:id" element={<MovieDetail />}></Route>
+				<Route
+					path="movies/:id"
+					element={<MovieDetail />}
+					loader={movieDetailsLoader}
+				></Route>
 			</Route>
 		)
 	);
 
-	const { moviesList, setMoviesList, reload, setReload } =
-		useContext(MovieContext);
+	const { setMoviesList } = useMovieContext();
 
 	useEffect(() => {
 		// Not synchronous

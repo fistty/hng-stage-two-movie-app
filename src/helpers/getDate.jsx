@@ -1,5 +1,4 @@
 export const getDate = (date) => {
-	console.log(date);
 	let comma = ", ";
 	let string = `${new Date(date).getFullYear()}`;
 	string = comma + string;

@@ -1,18 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { MovieBackdrop } from "./MovieBackdrop";
 import ticketSvg from "../../assets/two-tickets.svg";
 import listSvg from "../../assets/list.svg";
 import starSvg from "../../assets/star.svg";
+import { Link } from "react-router-dom";
+import { useMovieContext } from "../context/useMovieContext";
 import "./MovieInfo.css";
 
 export const MovieInfo = () => {
+	const { movieDetailArr } = useMovieContext();
+	useEffect(() => {
+		console.log(movieDetailArr);
+	}, []);
+
 	return (
 		<div className="movie-info">
 			<MovieBackdrop />
 			<div className="movie-description">
 				<div className="first-div">
 					<div className="movie-title">
-						<p>Top Gun: Maverick • 2022 • PG-13 • 2h 10m</p>
+						<p>{`${movieDetailArr.title} • `}</p>
+						<p>{`${new Date(movieDetailArr.release_date).toUTCString()}`} </p>
+						<p> {`${movieDetailArr.runtime} minutes`} </p>
 					</div>
 					<div className="movie-text">
 						<p>
@@ -22,12 +31,15 @@ export const MovieInfo = () => {
 							those chosen to fly it.
 						</p>
 					</div>
+					<div className="movie-top">
+						<Link to="/">View Top rated movies</Link>
+					</div>
 				</div>
 				<div className="second-div">
 					<div className="movie-rating">
 						<img src={starSvg} alt="rating image" />
 						<p className="movie-rating-average">8.5</p>
-						<p className="movie-rating-count">|350k</p>
+						<p className="movie-rating-count">| 350k</p>
 					</div>
 					<div className="movie-showtimes ">
 						<button className="first second-div-button">
