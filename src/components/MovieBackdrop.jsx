@@ -1,5 +1,5 @@
 import React from "react";
-import playSvg from "../../assets/play.svg";
+import playSvg from "../../assets/play2.svg";
 
 export const MovieBackdrop = () => {
 	const base = "https://image.tmdb.org/t/p/w1280";
