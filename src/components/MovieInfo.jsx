@@ -39,7 +39,9 @@ export const MovieInfo = () => {
 				<div className="second-div">
 					<div className="movie-rating">
 						<img src={starSvg} alt="rating image" />
-						<p className="movie-rating-average">{movieDetailArr?.vote_average}</p>
+						<p className="movie-rating-average">
+							{movieDetailArr?.vote_average.toFixed(1)}
+						</p>
 						<p className="movie-rating-count">| 350k</p>
 					</div>
 					<div className="movie-showtimes ">
