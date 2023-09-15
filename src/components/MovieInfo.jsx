@@ -50,9 +50,6 @@ export const MovieInfo = ({ imagePosterURL }) => {
 								? getRatings(movieDetailArr.vote_average)
 								: "-"}
 						</p>
-						{/* <p className="movie-rating-average">
-							{getRatings(movieDetailArr.vote_average)}
-						</p> */}
 						<p className="movie-rating-count">
 							{movieDetailArr?.vote_average !== undefined
 								? getRatings(movieDetailArr.vote_average, "count")
