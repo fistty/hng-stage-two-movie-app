@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { MovieBackdrop } from "./MovieBackdrop";
 import ticketSvg from "../../assets/two-tickets.svg";
 import listSvg from "../../assets/list.svg";
 import starSvg from "../../assets/star.svg";
 import { Link } from "react-router-dom";
 import { useMovieContext } from "../context/useMovieContext";
-import "./MovieInfo.css";
 import { getRatings } from "./getRatings";
+import "./MovieInfo.css";
 
 export const MovieInfo = ({ imagePosterURL }) => {
 	const { movieDetailArr } = useMovieContext();
@@ -22,9 +22,11 @@ export const MovieInfo = ({ imagePosterURL }) => {
 						<div className="movie-title">
 							<p data-testid="movie-title">{`${movieDetailArr?.title} • `}</p>
 							<p data-testid="movie-release-date">
-								{`${new Date(movieDetailArr?.release_date)
-									.toUTCString()
-									.slice(0, 17)} • `}
+								{movieDetailArr?.release_date
+									? `${new Date(movieDetailArr?.release_date)
+											.toUTCString()
+											.slice(0, 17)} • `
+									: "Not Released • "}
 							</p>
 							<p data-testid="movie-runtime">{`${movieDetailArr?.runtime}m`}</p>
 						</div>
@@ -48,9 +50,16 @@ export const MovieInfo = ({ imagePosterURL }) => {
 						<p className="movie-rating-average">
 							{movieDetailArr?.vote_average !== undefined
 								? getRatings(movieDetailArr.vote_average)
-								: ""}
+								: "-"}
 						</p>
-						<p className="movie-rating-count">| 350k</p>
+						{/* <p className="movie-rating-average">
+							{getRatings(movieDetailArr.vote_average)}
+						</p> */}
+						<p className="movie-rating-count">
+							{movieDetailArr?.vote_average !== undefined
+								? getRatings(movieDetailArr.vote_average, "count")
+								: "-"}
+						</p>
 					</div>
 					<div className="movie-showtimes ">
 						<button className="first second-div-button">
