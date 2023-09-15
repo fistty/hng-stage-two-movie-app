@@ -19,7 +19,7 @@ export const getMovies = async (setMoviesList) => {
 	setMoviesList(slicedData);
 };
 
-export const getMovieDetails = async (id, setMovieDetails) => {
+export const getMovieDetails = async (id) => {
 	const response = await fetch(
 		`https://api.themoviedb.org/3/movie/${id}?language=en-US`,
 		options
@@ -27,5 +27,6 @@ export const getMovieDetails = async (id, setMovieDetails) => {
 	const data = await response.json();
 
 	// console.log(data);
-	setMovieDetails(data);
+	// setMovieDetails(data);
+	return data;
 };

@@ -6,31 +6,28 @@ import starSvg from "../../assets/star.svg";
 import { Link } from "react-router-dom";
 import { useMovieContext } from "../context/useMovieContext";
 import "./MovieInfo.css";
+import { getRatings } from "./getRatings";
 
-export const MovieInfo = () => {
+export const MovieInfo = ({ imagePosterURL }) => {
 	const { movieDetailArr } = useMovieContext();
-
-	useEffect(() => {
-		console.log(movieDetailArr);
-	}, []);
 
 	return (
 		<div className="movie-info">
-			<MovieBackdrop poster={movieDetailArr?.backdrop_path} />
+			<MovieBackdrop imagePosterURL={imagePosterURL} />
 			<div className="movie-description">
 				<div className="first-div">
 					<div className="movie-title">
-						<p data-testid="movie-title">{`${movieDetailArr.title} • `}</p>
+						<p data-testid="movie-title">{`${movieDetailArr?.title} • `}</p>
 						<p data-testid="movie-release-date">
-							{`${new Date(movieDetailArr.release_date)
+							{`${new Date(movieDetailArr?.release_date)
 								.toUTCString()
 								.slice(0, 17)} • `}
 						</p>
-						<p data-testid="movie-runtime">{`${movieDetailArr.runtime}m`}</p>
+						<p data-testid="movie-runtime">{`${movieDetailArr?.runtime}m`}</p>
 					</div>
 					<div className="movie-info-genre">{/* <p>WEWEWE</p> */}</div>
 					<div className="movie-text">
-						<p>{movieDetailArr.overview}</p>
+						<p>{movieDetailArr?.overview}</p>
 					</div>
 					<div className="movie-top">
 						<Link to="/">View Top rated movies</Link>
@@ -40,7 +37,9 @@ export const MovieInfo = () => {
 					<div className="movie-rating">
 						<img src={starSvg} alt="rating image" />
 						<p className="movie-rating-average">
-							{movieDetailArr?.vote_average.toFixed(1)}
+							{movieDetailArr?.vote_average !== undefined
+								? getRatings(movieDetailArr.vote_average)
+								: ""}
 						</p>
 						<p className="movie-rating-count">| 350k</p>
 					</div>

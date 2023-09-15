@@ -7,7 +7,7 @@ import "./Home.css";
 function Home() {
 	const { moviesList } = useMovieContext();
 	useEffect(() => {
-		console.log(moviesList);
+		// console.log(moviesList);
 	}, []);
 	return (
 		<>
