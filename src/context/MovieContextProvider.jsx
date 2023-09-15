@@ -5,7 +5,9 @@ const MovieContextProvider = ({ children }) => {
 	const [moviesList, setMoviesList] = useState([]);
 	const [movieDetailArr, setMovieDetailArr] = useState([]);
 	const [querryArr, setQuerryArr] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
 	const [reload, setReload] = useState(true);
+	const [isOverlay, setIsOverlay] = useState(false);
 	return (
 		<MovieContext.Provider
 			value={{
@@ -15,6 +17,8 @@ const MovieContextProvider = ({ children }) => {
 				querryArr,
 				setMovieDetailArr,
 				setQuerryArr,
+				isOverlay,
+				setIsOverlay,
 			}}
 		>
 			{children}

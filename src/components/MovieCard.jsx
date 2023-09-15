@@ -2,9 +2,8 @@ import React from "react";
 import { getGenre } from "../helpers/getGenre";
 import { getDate } from "../helpers/getDate";
 import { Link } from "react-router-dom";
-
-import "./MovieCard.css";
 import { getImages } from "../helpers/getImages";
+import "./MovieCard.css";
 
 export const MovieCard = ({ movie }) => {
 	let width = "w92, w154, w185, w342, w500,w780, w1280";

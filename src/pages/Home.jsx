@@ -1,14 +1,9 @@
-import React, { useEffect } from "react";
-import { useMovieContext } from "../context/useMovieContext";
+import React from "react";
 import Header from "../components/Header";
 import { MovieList } from "../components/MovieList";
 import "./Home.css";
 
 function Home() {
-	const { moviesList } = useMovieContext();
-	useEffect(() => {
-		// console.log(moviesList);
-	}, []);
 	return (
 		<>
 			<Header />
