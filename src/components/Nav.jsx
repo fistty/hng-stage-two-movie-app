@@ -8,6 +8,7 @@ export const Nav = () => {
 		<nav className="nav">
 			<Logo />
 			<SearchInput />
+
 			<Menu />
 		</nav>
 	);

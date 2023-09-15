@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { getQueriedMovies } from "../helpers/api";
 import { useMovieContext } from "../context/useMovieContext";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import "./SearchInput.css";
 
 function SearchInput() {
-	const { setMoviesList } = useMovieContext();
+	const { setMoviesList, querryArr, setQuerryArr } = useMovieContext();
 	const [searchText, setSearchText] = useState("");
 
 	const handleChange = (e) => {
 		setSearchText(e.target.value);
+		getQueriedMovies(searchText, setQuerryArr, "toSlice");
 	};
 
 	const handleSubmit = (e) => {
@@ -45,6 +46,15 @@ function SearchInput() {
 					/>
 				</svg>
 			</button>
+			{searchText ? (
+				<div className="search-result">
+					{querryArr.map((query) => (
+						<div key={query.id}>
+							<p> {query.title} </p>
+						</div>
+					))}
+				</div>
+			) : null}
 		</form>
 	);
 }

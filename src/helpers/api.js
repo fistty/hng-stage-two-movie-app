@@ -15,7 +15,7 @@ export const getMovies = async (setMoviesList) => {
 	const data = await response.json();
 	let slicedData = data.results;
 	slicedData = slicedData.slice(0, 10);
-	console.log(slicedData);
+	// console.log(slicedData);
 	setMoviesList(slicedData);
 };
 
@@ -31,12 +31,14 @@ export const getMovieDetails = async (id) => {
 	return data;
 };
 
-export const getQueriedMovies = async (query, setMoviesList) => {
+export const getQueriedMovies = async (query, setMoviesList, toSlice) => {
 	const response = await fetch(
 		`https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=1`,
 		options
 	);
-	const data = await response.json();
-	console.log(data);
-	setMoviesList(data.results);
+	let data = await response.json();
+	if (toSlice) {
+		data = data.results.slice(0, 5);
+	}
+	setMoviesList(data);
 };
