@@ -1,36 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Poppins:wght@400;500;600;700;800&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Poppins:wght@400;500;600;700;800&display=swap");
 
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
 }
 
 :root {
-  font-family: "DM Sans", Helvetica;
+	font-family: "DM Sans", Helvetica;
 
-  color-scheme: light dark;
-  color: white;
-  color: black;
+	color-scheme: light dark;
+	color: white;
+	color: black;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
 
-  --DM-sans: "DM Sans", Helvetica;
+	--DM-sans: "DM Sans", Helvetica;
 
-  --Poppins: 'Poppins', sans-serif;
+	--Poppins: "Poppins", sans-serif;
 }
 
 button {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 a {
-  cursor: pointer;
+	cursor: pointer;
 }

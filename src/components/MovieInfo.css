@@ -4,7 +4,6 @@
 
 .movie-backdrop {
 	height: 28.0625rem;
-	flex-shrink: 0;
 	border-radius: 1.25rem;
 	margin-top: 1.5rem;
 	border-radius: 1.25rem;
@@ -12,6 +11,14 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: relative;
+}
+
+@media screen and (max-width: 572px) {
+	.movie-backdrop {
+		height: unset;
+		width: 100%;
+		aspect-ratio: 16/9;
+	}
 }
 
 .movie-backdrop > img {
@@ -192,7 +199,6 @@
 	border-radius: 0.625rem;
 	background: #be123c;
 	color: #fff;
-	/* text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); */
 	font-family: Poppins;
 	font-size: 1.25rem;
 	font-style: normal;
@@ -250,14 +256,13 @@ button.second:hover {
 	align-items: center;
 	justify-content: center;
 	color: white;
-
-	color: #fff;
 	font-family: var(--Poppins);
 	font-size: 1.25rem;
 	font-style: normal;
 	font-weight: 500;
 	border: 1px solid #be123c;
 	transition: all 200ms ease;
+	margin-bottom: 2rem;
 }
 
 .movie-top > a:visited {
