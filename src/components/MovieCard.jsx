@@ -2,10 +2,11 @@ import React from "react";
 import { getGenre } from "../helpers/getGenre";
 import { getDate } from "../helpers/getDate";
 import { Link } from "react-router-dom";
+
 import "./MovieCard.css";
+import { getImages } from "../helpers/getImages";
 
 export const MovieCard = ({ movie }) => {
-	const baseImageUrl = "https://image.tmdb.org/t/p/w185";
 	let width = "w92, w154, w185, w342, w500,w780, w1280";
 
 	return (
@@ -16,7 +17,7 @@ export const MovieCard = ({ movie }) => {
 		>
 			<div className="movie-poster">
 				<img
-					src={`${baseImageUrl}/${movie.poster_path}`}
+					src={getImages(movie.poster_path)}
 					alt={`${movie.title} image`}
 					data-testid="movie-poster"
 				/>

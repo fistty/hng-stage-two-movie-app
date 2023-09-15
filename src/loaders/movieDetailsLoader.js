@@ -7,7 +7,10 @@ export const movieDetailsLoader = async ({ params }) => {
 
 	// To prevent the movie poster from displaying the previous images before a new image
 	const baseImageURL = await "https://image.tmdb.org/t/p/w1280";
-	const imagePosterURL = await `${baseImageURL}${movieDetail.backdrop_path}`;
+	let imagePosterURL = await `${baseImageURL}${movieDetail.backdrop_path}`;
+	if (!movieDetail.backdrop_path) {
+		imagePosterURL = null;
+	}
 
 	return { movieDetail, imagePosterURL };
 };

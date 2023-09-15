@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import { getQueriedMovies } from "../helpers/api";
+import { useMovieContext } from "../context/useMovieContext";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 function Search() {
+	const { setMoviesList } = useMovieContext();
+	const [searchText, setSearchText] = useState("");
+
+	const handleChange = (e) => {
+		setSearchText(e.target.value);
+	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		getQueriedMovies(searchText, setMoviesList);
+	};
+
 	return (
-		<form className="form-search">
+		<form className="form-search" onSubmit={handleSubmit}>
 			<input
 				className="search-input"
 				type="text"
 				name="search"
 				id="search"
+				value={searchText}
+				onChange={handleChange}
 				placeholder="What do you want to watch?"
 			/>
 			<button className="search-button">

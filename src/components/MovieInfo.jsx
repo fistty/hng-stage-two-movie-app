@@ -11,23 +11,32 @@ import { getRatings } from "./getRatings";
 export const MovieInfo = ({ imagePosterURL }) => {
 	const { movieDetailArr } = useMovieContext();
 
+	console.log(movieDetailArr);
+
 	return (
 		<div className="movie-info">
 			<MovieBackdrop imagePosterURL={imagePosterURL} />
 			<div className="movie-description">
 				<div className="first-div">
-					<div className="movie-title">
-						<p data-testid="movie-title">{`${movieDetailArr?.title} • `}</p>
-						<p data-testid="movie-release-date">
-							{`${new Date(movieDetailArr?.release_date)
-								.toUTCString()
-								.slice(0, 17)} • `}
-						</p>
-						<p data-testid="movie-runtime">{`${movieDetailArr?.runtime}m`}</p>
+					<div className="info">
+						<div className="movie-title">
+							<p data-testid="movie-title">{`${movieDetailArr?.title} • `}</p>
+							<p data-testid="movie-release-date">
+								{`${new Date(movieDetailArr?.release_date)
+									.toUTCString()
+									.slice(0, 17)} • `}
+							</p>
+							<p data-testid="movie-runtime">{`${movieDetailArr?.runtime}m`}</p>
+						</div>
+						<div className="movie-info-genre">
+							{movieDetailArr?.genres?.map((gnr) => (
+								<p key={gnr.id}>{gnr.name}</p>
+							))}
+						</div>
 					</div>
-					<div className="movie-info-genre">{/* <p>WEWEWE</p> */}</div>
+
 					<div className="movie-text">
-						<p>{movieDetailArr?.overview}</p>
+						<p data-testid="movie-overview">{movieDetailArr?.overview}</p>
 					</div>
 					<div className="movie-top">
 						<Link to="/">View Top rated movies</Link>

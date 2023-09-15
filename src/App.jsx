@@ -8,14 +8,11 @@ import RootLayout from "./layout/RootLayout";
 import Home from "./pages/Home";
 import { MovieDetail } from "./pages/MovieDetails";
 import "./App.css";
-import { useContext, useEffect } from "react";
-import MovieContextProvider from "./context/MovieContextProvider";
-import { getMovies } from "./helpers/api";
+import { useEffect } from "react";
 import { useMovieContext } from "./context/useMovieContext";
-import { MovieContext } from "./context/MovieContext";
-import { MovieList } from "./components/MovieList";
 import { data } from "./data";
 import { movieDetailsLoader } from "./loaders/movieDetailsLoader";
+import { getMovies } from "./helpers/api";
 
 function App() {
 	const router = createBrowserRouter(
@@ -35,8 +32,8 @@ function App() {
 
 	useEffect(() => {
 		// Not synchronous
-		// getMovies(setMoviesList);
-		setMoviesList(data);
+		getMovies(setMoviesList);
+		// setMoviesList(data);
 	}, []);
 
 	return (
