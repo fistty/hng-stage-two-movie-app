@@ -1,13 +1,13 @@
 import React from "react";
-import Search from "./Search";
 import { Logo } from "./Logo";
 import { Menu } from "./Menu";
+import SearchInput from "./SearchInput";
 
 export const Nav = () => {
 	return (
 		<nav className="nav">
 			<Logo />
-			<Search />
+			<SearchInput />
 			<Menu />
 		</nav>
 	);

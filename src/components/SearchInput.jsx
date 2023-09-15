@@ -3,7 +3,7 @@ import { getQueriedMovies } from "../helpers/api";
 import { useMovieContext } from "../context/useMovieContext";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
-function Search() {
+function SearchInput() {
 	const { setMoviesList } = useMovieContext();
 	const [searchText, setSearchText] = useState("");
 
@@ -49,4 +49,4 @@ function Search() {
 	);
 }
 
-export default Search;
+export default SearchInput;
