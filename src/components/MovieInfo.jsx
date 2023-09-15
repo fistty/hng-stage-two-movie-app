@@ -11,8 +11,6 @@ import "./MovieInfo.css";
 export const MovieInfo = ({ imagePosterURL }) => {
 	const { movieDetailArr } = useMovieContext();
 
-	console.log(movieDetailArr);
-
 	return (
 		<div className="movie-info">
 			<MovieBackdrop imagePosterURL={imagePosterURL} />

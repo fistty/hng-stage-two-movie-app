@@ -11,6 +11,11 @@ export const MovieDetail = () => {
 
 	useEffect(() => {
 		setMovieDetailArr(movieDetail);
+		const body = document.querySelector("body");
+		body.style.marginBottom = "0px";
+		return () => {
+			body.style.marginBottom = "4.8rem";
+		};
 	}, []);
 	return (
 		<main className="movie-details">

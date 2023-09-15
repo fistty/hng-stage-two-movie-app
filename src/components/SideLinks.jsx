@@ -15,29 +15,30 @@ export const SideLinks = () => {
 				<ul className="side-links-ul">
 					<li className="side-links-li">
 						<Link to="/" className="side-links-a">
-							<img className="side-links-svg" src={homeSvg} alt="home-link" /> Home
+							<img className="side-links-svg" src={homeSvg} alt="home-link" />
+							<p>Home</p>
 						</Link>
 					</li>
 					<li className="side-links-li">
 						<Link to="#fd" className="side-links-a active">
 							<img className="side-links-svg" src={moviesSvg} alt="movie-link" />
-							Movies
+							<p>Movies</p>
 						</Link>
 					</li>
 					<li className="side-links-li">
 						<Link onClick={diabledLinks} to="#" className="side-links-a void">
-							<img className="side-links-svg" src={tvSvg} alt="tv-link" /> TV Series
+							<img className="side-links-svg" src={tvSvg} alt="tv-link" />
+							<p>TV Series</p>
 						</Link>
 					</li>
 					<li className="side-links-li">
 						<Link onClick={diabledLinks} to="#" className="side-links-a void">
 							<img className="side-links-svg" src={upcomingSvg} alt="upcoming-link" />
-							Upcoming
+							<p>Upcoming</p>
 						</Link>
 					</li>
 				</ul>
 			</div>
-			;
 		</div>
 	);
 };
