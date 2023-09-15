@@ -1,21 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getQueriedMovies } from "../helpers/api";
 import { useMovieContext } from "../context/useMovieContext";
-import "./SearchInput.css";
+import { SearchResult } from "./SearchResult";
+let searchTextTimeout;
 
 function SearchInput() {
-	const { setMoviesList, querryArr, setQuerryArr } = useMovieContext();
+	const { setMoviesList, setQuerryArr, setIsOverlay, isOverlay } =
+		useMovieContext();
 	const [searchText, setSearchText] = useState("");
 
 	const handleChange = (e) => {
 		setSearchText(e.target.value);
-		getQueriedMovies(searchText, setQuerryArr, "toSlice");
+		// Clear any existing timeout
+		if (searchTextTimeout) {
+			clearTimeout(searchTextTimeout);
+		}
+
+		// Set a new timeout
+		searchTextTimeout = setTimeout(() => {
+			getQueriedMovies(searchText, setQuerryArr, "toSlice");
+		}, 500); // Adjust the delay time as needed
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		getQueriedMovies(searchText, setMoviesList);
 	};
+
+	const handleInputFocus = () => {
+		setIsOverlay(true);
+	};
+
+	useEffect(() => {
+		return () => {
+			setSearchText("");
+			clearTimeout(searchTextTimeout);
+			setIsOverlay(false);
+		};
+	}, []);
 
 	return (
 		<form className="form-search" onSubmit={handleSubmit}>
@@ -27,6 +49,7 @@ function SearchInput() {
 				value={searchText}
 				onChange={handleChange}
 				placeholder="What do you want to watch?"
+				onFocus={handleInputFocus}
 			/>
 			<button className="search-button">
 				<svg
@@ -46,14 +69,9 @@ function SearchInput() {
 					/>
 				</svg>
 			</button>
-			{searchText ? (
-				<div className="search-result">
-					{querryArr.map((query) => (
-						<div key={query.id}>
-							<p> {query.title} </p>
-						</div>
-					))}
-				</div>
+
+			{searchText.length > 1 && isOverlay ? (
+				<SearchResult searchText={searchText} />
 			) : null}
 		</form>
 	);

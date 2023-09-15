@@ -13,6 +13,7 @@ import { useMovieContext } from "./context/useMovieContext";
 import { data } from "./data";
 import { movieDetailsLoader } from "./loaders/movieDetailsLoader";
 import { getMovies } from "./helpers/api";
+import { Overlay } from "./components/Overlay";
 
 function App() {
 	const router = createBrowserRouter(
@@ -28,7 +29,7 @@ function App() {
 		)
 	);
 
-	const { setMoviesList } = useMovieContext();
+	const { setMoviesList, isOverlay } = useMovieContext();
 
 	useEffect(() => {
 		// Not synchronous
@@ -37,9 +38,10 @@ function App() {
 	}, []);
 
 	return (
-		<>
+		<div className="div">
+			{isOverlay ? <Overlay /> : null}
 			<RouterProvider router={router} />
-		</>
+		</div>
 	);
 }
 
