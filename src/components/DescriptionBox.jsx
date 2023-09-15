@@ -2,6 +2,7 @@ import React from "react";
 import imdbSvg from "../../assets/imdb.svg";
 import rottenTomatoSvg from "../../assets/tomato.svg";
 import playSvg from "../../assets/play.svg";
+import { Link } from "react-router-dom";
 
 export const DescriptionBox = () => {
 	return (
@@ -26,9 +27,9 @@ export const DescriptionBox = () => {
 					target of hit men and women everywhere.
 				</p>
 			</div>
-			<button className="description-button">
-				<img src={playSvg} alt="" /> <p>WATCH TRAILER</p>
-			</button>
+			<div className="description-link">
+				<img src={playSvg} alt="" /> <Link to="movies/458156">WATCH TRAILER</Link>
+			</div>
 		</div>
 	);
 };
