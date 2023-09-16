@@ -4,16 +4,17 @@ import {
 	Route,
 	RouterProvider,
 } from "react-router-dom";
+import { useEffect } from "react";
 import RootLayout from "./layout/RootLayout";
 import Home from "./pages/Home";
 import { MovieDetail } from "./pages/MovieDetails";
 import "./App.css";
-import { useEffect } from "react";
 import { useMovieContext } from "./context/useMovieContext";
-import { data } from "./data";
 import { movieDetailsLoader } from "./loaders/movieDetailsLoader";
 import { getMovies } from "./helpers/api";
 import { Overlay } from "./components/Overlay";
+import { NotFound } from "./pages/NotFound";
+import { MovieError } from "./pages/MovieError";
 
 function App() {
 	const router = createBrowserRouter(
@@ -24,7 +25,9 @@ function App() {
 					path="movies/:id"
 					element={<MovieDetail />}
 					loader={movieDetailsLoader}
+					errorElement={<MovieError />}
 				></Route>
+				<Route path="*" element={<NotFound />} />
 			</Route>
 		)
 	);
@@ -34,7 +37,13 @@ function App() {
 	useEffect(() => {
 		// Not synchronous
 		getMovies(setMoviesList);
-		// setMoviesList(data);
+
+		return () => {
+			window.scroll({
+				top: 0,
+				behavior: "smooth",
+			});
+		};
 	}, []);
 
 	return (

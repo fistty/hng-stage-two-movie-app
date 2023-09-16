@@ -3,11 +3,13 @@ import "./SearchResult.css";
 import { useMovieContext } from "../context/useMovieContext";
 import { getImages } from "../helpers/getImages";
 import { Link } from "react-router-dom";
+import { Spinner } from "./Spinner";
 
 export const SearchResult = ({ searchText }) => {
 	const { querryArr } = useMovieContext();
 	return (
 		<div className="search-result">
+			{searchText.length > 1 && querryArr.length < 1 ? <Spinner /> : null}
 			{searchText.length > 1
 				? querryArr.map((query) => (
 						<Link to={`movies/${query.id}`} className="search-item" key={query.id}>

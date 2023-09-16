@@ -38,7 +38,7 @@ export const getQueriedMovies = async (query, setMoviesList, toSlice) => {
 	);
 	let data = await response.json();
 	if (toSlice) {
-		data = data.results.slice(0, 8);
+		data = data.results.slice(0, 10);
 	}
 	setMoviesList(data);
 };

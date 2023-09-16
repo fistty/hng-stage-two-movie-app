@@ -19,7 +19,7 @@
 	}
 }
 
-@media screen and (max-width: 501px) {
+@media screen and (max-width: 802px) {
 	.side-bar {
 		display: none;
 	}

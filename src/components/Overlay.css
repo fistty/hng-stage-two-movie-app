@@ -5,4 +5,5 @@
 	background-color: transparent;
 	cursor: pointer;
 	transition: all 200ms ease;
+	z-index: 0;
 }

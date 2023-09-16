@@ -58,6 +58,7 @@
 	font-size: 0.75rem;
 	font-style: normal;
 	font-weight: 700;
+	text-transform: uppercase;
 }
 
 .movie-title h2 {
@@ -74,4 +75,23 @@
 	font-size: 0.75rem;
 	font-style: normal;
 	font-weight: 700;
+}
+
+.movie-vote {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.movie-vote img {
+	width: 15px;
+}
+
+.movie-vote-p {
+	color: #898989;
+	font-family: var(--Poppins);
+	font-size: 0.8rem;
+	font-style: normal;
+	font-weight: 500;
+	margin-left: 0.56rem;
 }

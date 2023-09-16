@@ -24,13 +24,21 @@ function SearchInput() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		getQueriedMovies(searchText, setMoviesList);
+		// getQueriedMovies(searchText, setMoviesList);
 	};
 
 	const handleInputFocus = () => {
 		setIsOverlay(true);
-	};
 
+		if (searchTextTimeout) {
+			clearTimeout(searchTextTimeout);
+		}
+
+		// Set a new timeout
+		searchTextTimeout = setTimeout(() => {
+			getQueriedMovies(searchText, setQuerryArr, "toSlice");
+		}, 500); // Adjust the delay time as needed
+	};
 	useEffect(() => {
 		return () => {
 			setSearchText("");

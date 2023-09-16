@@ -1,12 +1,19 @@
 import React from "react";
 import { getGenre } from "../helpers/getGenre";
 import { getDate } from "../helpers/getDate";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getImages } from "../helpers/getImages";
+import starSvg from "../../assets/star.svg";
 import "./MovieCard.css";
+import { getRatings } from "./getRatings";
+import { useMovieContext } from "../context/useMovieContext";
 
 export const MovieCard = ({ movie }) => {
 	let width = "w92, w154, w185, w342, w500,w780, w1280";
+
+	const navigate = useNavigate();
+
+	const { setIsLoading } = useMovieContext();
 
 	return (
 		<Link
@@ -22,15 +29,18 @@ export const MovieCard = ({ movie }) => {
 				/>
 			</div>
 			<div className="movie-loc-year">
-				<p> USA</p>
+				<p>{movie.original_language}</p>
 				<p data-testid="movie-release-date">{getDate(movie.release_date)}</p>
 			</div>
 			<div className="movie-title" data-testid="movie-title">
 				<h2>{movie.title}</h2>
 			</div>
-			{/* <div className="movie-ratings">
-				<div className="imdb">97</div> <div className="tomato">90</div>
-			</div> */}
+			<div className="movie-vote">
+				<img src={starSvg} alt="rating image" />
+				<p className="movie-vote-p">
+					{movie?.vote_average !== undefined ? getRatings(movie.vote_average) : "-"}
+				</p>
+			</div>
 			<div className="movie-genre">{<p>{getGenre(movie.genre_ids)}</p>}</div>
 		</Link>
 	);

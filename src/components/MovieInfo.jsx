@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { MovieBackdrop } from "./MovieBackdrop";
 import ticketSvg from "../../assets/two-tickets.svg";
 import listSvg from "../../assets/list.svg";
@@ -6,10 +6,16 @@ import starSvg from "../../assets/star.svg";
 import { Link } from "react-router-dom";
 import { useMovieContext } from "../context/useMovieContext";
 import { getRatings } from "./getRatings";
-import "./MovieInfo.css";
 
 export const MovieInfo = ({ imagePosterURL }) => {
 	const { movieDetailArr } = useMovieContext();
+
+	useEffect(() => {
+		window.scroll({
+			top: 0,
+			behavior: "smooth",
+		});
+	}, []);
 
 	return (
 		<div className="movie-info">
@@ -34,16 +40,8 @@ export const MovieInfo = ({ imagePosterURL }) => {
 							))}
 						</div>
 					</div>
-
-					<div className="movie-text">
-						<p data-testid="movie-overview">{movieDetailArr?.overview}</p>
-					</div>
-					<div className="movie-top">
-						<Link to="/">View Top rated movies</Link>
-					</div>
-				</div>
-				<div className="second-div">
-					<div className="movie-rating">
+					{/* DUPLICATED  FOR RESPONSIVENESS*/}
+					<div className="movie-rating first">
 						<img src={starSvg} alt="rating image" />
 						<p className="movie-rating-average">
 							{movieDetailArr?.vote_average !== undefined
@@ -56,13 +54,69 @@ export const MovieInfo = ({ imagePosterURL }) => {
 								: "-"}
 						</p>
 					</div>
-					<div className="movie-showtimes ">
+
+					{/* DUPLICATED  FOR RESPONSIVENESS*/}
+					<div className="movie-showtimes first">
 						<button className="first second-div-button">
 							<img src={ticketSvg} alt="" />
 							See Showtime
 						</button>
 					</div>
-					<div className="movie-more ">
+					<div className="movie-more first">
+						<button className="second second-div-button">
+							<img src={listSvg} alt="" />
+							More watch options
+						</button>
+					</div>
+
+					<div className="movie-text">
+						<p data-testid="movie-overview">{movieDetailArr?.overview}</p>
+					</div>
+					{movieDetailArr?.homepage ? (
+						<p className="movie-website">
+							Website :
+							<a href={movieDetailArr?.homepage} target="_blank">
+								{movieDetailArr?.homepage}
+							</a>
+						</p>
+					) : null}
+					{movieDetailArr?.original_language ? (
+						<p className="movie-language">
+							Language:
+							<span className="second-p">{movieDetailArr?.original_language}</span>
+						</p>
+					) : null}
+					{movieDetailArr?.tagline ? (
+						<p className="movie-tagline">
+							Movie Tagline:
+							<span className="second-p">{movieDetailArr?.tagline}</span>
+						</p>
+					) : null}
+					<div className="movie-top">
+						<Link to="/">View Top rated movies</Link>
+					</div>
+				</div>
+				<div className="second-div">
+					<div className="movie-rating second">
+						<img src={starSvg} alt="rating image" />
+						<p className="movie-rating-average">
+							{movieDetailArr?.vote_average !== undefined
+								? getRatings(movieDetailArr.vote_average)
+								: "-"}
+						</p>
+						<p className="movie-rating-count">
+							{movieDetailArr?.vote_average !== undefined
+								? getRatings(movieDetailArr.vote_average, "count")
+								: "-"}
+						</p>
+					</div>
+					<div className="movie-showtimes second">
+						<button className="first second-div-button">
+							<img src={ticketSvg} alt="" />
+							See Showtime
+						</button>
+					</div>
+					<div className="movie-more second">
 						<button className="second second-div-button">
 							<img src={listSvg} alt="" />
 							More watch options
