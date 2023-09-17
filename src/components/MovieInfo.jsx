@@ -74,9 +74,9 @@ export const MovieInfo = ({ imagePosterURL }) => {
 					</div>
 					{movieDetailArr?.homepage ? (
 						<p className="movie-website">
-							Website :
+							Website:
 							<a href={movieDetailArr?.homepage} target="_blank">
-								{movieDetailArr?.homepage}
+								{ movieDetailArr?.homepage}
 							</a>
 						</p>
 					) : null}
