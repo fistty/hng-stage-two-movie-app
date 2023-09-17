@@ -83,7 +83,7 @@ export const MovieInfo = ({ imagePosterURL }) => {
 					{movieDetailArr?.original_language ? (
 						<p className="movie-language">
 							Language:
-							<span className="second-p">{movieDetailArr?.original_language}</span>
+							<span className="second-p">{ movieDetailArr?.original_language}</span>
 						</p>
 					) : null}
 					{movieDetailArr?.tagline ? (
