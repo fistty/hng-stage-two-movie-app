@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { MovieBackdrop } from "./MovieBackdrop";
 import ticketSvg from "../../assets/two-tickets.svg";
 import listSvg from "../../assets/list.svg";
@@ -9,13 +9,6 @@ import { getRatings } from "./getRatings";
 
 export const MovieInfo = ({ imagePosterURL }) => {
 	const { movieDetailArr } = useMovieContext();
-
-	useEffect(() => {
-		window.scroll({
-			top: 0,
-			behavior: "smooth",
-		});
-	}, []);
 
 	return (
 		<div className="movie-info">
@@ -76,14 +69,14 @@ export const MovieInfo = ({ imagePosterURL }) => {
 						<p className="movie-website">
 							Website:
 							<a href={movieDetailArr?.homepage} target="_blank">
-								{ movieDetailArr?.homepage}
+								{movieDetailArr?.homepage}
 							</a>
 						</p>
 					) : null}
 					{movieDetailArr?.original_language ? (
 						<p className="movie-language">
 							Language:
-							<span className="second-p">{ movieDetailArr?.original_language}</span>
+							<span className="second-p">{movieDetailArr?.original_language}</span>
 						</p>
 					) : null}
 					{movieDetailArr?.tagline ? (
