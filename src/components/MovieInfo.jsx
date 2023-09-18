@@ -74,16 +74,16 @@ export const MovieInfo = ({ imagePosterURL }) => {
 					</div>
 					{movieDetailArr?.homepage ? (
 						<p className="movie-website">
-							Website :
+							Website:
 							<a href={movieDetailArr?.homepage} target="_blank">
-								{movieDetailArr?.homepage}
+								{ movieDetailArr?.homepage}
 							</a>
 						</p>
 					) : null}
 					{movieDetailArr?.original_language ? (
 						<p className="movie-language">
 							Language:
-							<span className="second-p">{movieDetailArr?.original_language}</span>
+							<span className="second-p">{ movieDetailArr?.original_language}</span>
 						</p>
 					) : null}
 					{movieDetailArr?.tagline ? (
