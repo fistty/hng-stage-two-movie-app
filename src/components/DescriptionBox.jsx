@@ -1,4 +1,3 @@
-import React from "react";
 import imdbSvg from "../../assets/imdb.svg";
 import rottenTomatoSvg from "../../assets/tomato.svg";
 import playSvg from "../../assets/play.svg";
@@ -23,8 +22,8 @@ export const DescriptionBox = () => {
 			<div className="description-text">
 				<p>
 					John Wick is on the run after killing a member of the international
-					assassins' guild, and with a $14 million price tag on his head, he is the
-					target of hit men and women everywhere.
+					assassins&apos; guild, and with a $14 million price tag on his head, he is
+					the target of hit men and women everywhere.
 				</p>
 			</div>
 			<div className="description-link">

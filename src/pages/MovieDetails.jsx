@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect } from "react";
 import { SideBar } from "../components/SideBar";
 import { MovieInfo } from "../components/MovieInfo";
 import "./MovieDetails.css";

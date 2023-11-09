@@ -1,19 +1,12 @@
-import React from "react";
 import { getGenre } from "../helpers/getGenre";
 import { getDate } from "../helpers/getDate";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { getImages } from "../helpers/getImages";
 import starSvg from "../../assets/star.svg";
 import "./MovieCard.css";
 import { getRatings } from "./getRatings";
-import { useMovieContext } from "../context/useMovieContext";
-
 export const MovieCard = ({ movie }) => {
-	let width = "w92, w154, w185, w342, w500,w780, w1280";
-
-	const navigate = useNavigate();
-
-	const { setIsLoading } = useMovieContext();
+	// let width = "w92, w154, w185, w342, w500,w780, w1280";
 
 	return (
 		<Link
